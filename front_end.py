@@ -7,6 +7,7 @@ import wavio as wv
 import subprocess 
 import back_end
 
+#main window
 class SimpleApp:
     def __init__(self, root):
         self.root = root
@@ -59,9 +60,6 @@ class SimpleApp:
         command=back_end.chat(ques)
         print(command)
 
- 
-        # Define the command to be executed 
-        # command = "dir" 
         
         # Run the command using subprocess 
         try: 
@@ -73,11 +71,8 @@ class SimpleApp:
             # Handle any errors that occur during command execution 
             print(f"Command execution failed: {e}")
 
-
-        
-
-        
-
+     
+#main func
 def main():
     root = tk.Tk()
     app = SimpleApp(root)
