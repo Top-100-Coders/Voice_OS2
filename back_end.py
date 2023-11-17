@@ -1,15 +1,14 @@
-from openai import OpenAI
-
-
 # import required libraries
-import sounddevice as sd
+from openai import OpenAI
 from scipy.io.wavfile import write
+import sounddevice as sd
 import wavio as wv
 
 
 from openai import OpenAI
 client = OpenAI(api_key="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")
 
+#transcription func
 def transcrpt(aud):
     audio_file= open(aud, "rb")
     transcript = client.audio.transcriptions.create(
@@ -21,6 +20,7 @@ def transcrpt(aud):
     # print(f"transcript={transcript}")
     return transcript
 
+#answering func
 def chat(q):
     response = client.chat.completions.create(
     model="gpt-3.5-turbo",
