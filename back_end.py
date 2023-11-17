@@ -28,7 +28,7 @@ def chat(q):
     {"role": "system", "content": "You provide only shell commands to run in command line.Dont add any other text. Dont add any placeholder text. provide command as it should be typed in cmmand line."},
     {"role": "user", "content": "provide code to complete the following task. say error if task doesnt make sense:"+q}
     ],
-    temperature=0.85, 
+    temperature=0.4, 
     max_tokens=256, 
     top_p=1, 
     frequency_penalty=0, 
