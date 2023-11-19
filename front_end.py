@@ -14,7 +14,7 @@ class SimpleApp:
         self.root.title("Voice OS")
         self.root.minsize(300, 250)  # Set minimum window size
 
-        self.microphone_icon = tk.PhotoImage(file="C:\\Top100\\microphone-342.png")  # Replace with your microphone icon path
+        self.microphone_icon = tk.PhotoImage(file="microphone-342.png")  # Replace with your microphone icon path
 
         self.frame = tk.Frame(self.root)
         self.frame.pack(expand=True)
@@ -47,28 +47,20 @@ class SimpleApp:
 
     def record_audio(self):
         audio_data = []
-        while self.is_running:
-            # Recording audio for 0.5 seconds (adjust duration as needed)
-            data = sd.rec(int(44100 * 5), samplerate=44100, channels=2, dtype=np.int16)
+        while self.is_running: 
+            data = sd.rec(int(44100 * 5), samplerate=44100, channels=2, dtype=np.int16) 
             audio_data.extend(data)
             sd.wait()
-        # Save or process audio data here (e.g., save to a file, process the audio, etc.)
-        # Convert the NumPy array to audio file
-        wv.write("recording1.wav", audio_data, 44100, sampwidth=2)
+        wv.write("recording1.wav", audio_data, 44100, sampwidth=2) # sampwidth ?
         
-        ques = back_end.transcrpt("recording1.wav")
+        ques = back_end.transcrpt("recording1.wav") 
         command=back_end.chat(ques)
-        print(command)
-
-        
-        # Run the command using subprocess 
+        # print(command)
         try: 
-            # Execute the command in the terminal 
             if command=="ls": 
                 command="dir"
-            subprocess.run(command, shell=True, check=True) 
-        except subprocess.CalledProcessError as e: 
-            # Handle any errors that occur during command execution 
+            subprocess.run(command, shell=True, check=True) # what is subprocess? parameters?
+        except subprocess.CalledProcessError as e:  
             print(f"Command execution failed: {e}")
 
      

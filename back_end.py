@@ -6,7 +6,7 @@ import wavio as wv
 
 
 from openai import OpenAI
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 #transcription func
 def transcrpt(aud):
