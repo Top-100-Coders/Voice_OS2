@@ -6,7 +6,7 @@ Mergeing the power of traditional command line functionalities with cutting-edge
 Run the following command to clone the repository
 
 ```sh
-git clone https://github.com/AlenSenson/Voice_OS.git
+git clone https://github.com/Top-100-Coders/Voice_OS2.git
 ```
 
 Run the following command to install the dependencies
@@ -31,5 +31,5 @@ python front_end.py
 
 ## Use
 <p align="center">
-<img src="https://github.com/AlenSenson/Voice_OS/blob/main/Screenshot%202023-11-17%20111259.png?raw=true" width=70% height=70%>
+<img src="https://github.com/AkarshAnilkumar/Voice_OS/blob/main/Screenshot%202023-11-17%20111259.png" width=70% height=70%>
 </p>
